@@ -1,0 +1,33 @@
+{
+  "name": "first_angular_project",
+  "version": "1.6.6",
+  "description": "first attempt at angular",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    // "start" : "http-server ./ -p8000"   possible
+    "start" : "http-server ./01-11-2017 -p8000" //possible
+//http://localhost:8000/app/
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/judith435/01-11-2017.git"
+  },
+  "keywords": [
+    "judy",
+    "angular",
+    "attempt"
+  ],
+  "author": "Judith Ilson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/judith435/01-11-2017/issues"
+  },
+  "homepage": "https://github.com/judith435/01-11-2017#readme",
+  "dependencies": {
+    "angular": "^1.6.6"
+  },
+  "devDependencies": {
+    "http-server": "^0.10.0"
+  }
+}

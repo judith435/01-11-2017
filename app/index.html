@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" ng-app='john'>
+  <head>
+    <meta charset="utf-8">
+    <title>judy File {{i}}</title>
+    <script src="../node_modules/angular/angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <p style="border: solid 2px blue ">Nothing here {{2+2}}</p>
+    {{ i= 7}}
+    <br>
+    <div ng-controller="math"  style="border: solid 2px red ">
+      {{ myFirstVar }}
+    </div>
+    <br>
+    <div ng-controller="bryce" style="border: solid 2px green ">
+      {{ myFirstVar }}
+      <ul>
+      <li ng-repeat='(key, value) in myArr'>
+       {{key}} - {{value}}
+      </li>
+    </ul>
+    </div>
+    <br>
+    <div ng-controller="book" style="border: solid 2px purple ">
+        {{ myHusband }}
+        <ul>
+            <li ng-repeat='(key, value) in bookArray'>
+            {{key}} - {{value}}
+            </li>
+        </ul>
+        <div  class="book-row" ng-repeat="(k,v) in bookArray" >
+            <div class="book-text-container">
+                {{v.name}}
+                <br>
+                {{v.book}}
+            </div>
+            <img ng-src="{{v.image}}" width="100px" height="100px">
+        </div> 
+    </div>
+    <p>just html no js</p>     
+  </body>
+</html>

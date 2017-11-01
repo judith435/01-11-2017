@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" ng-app='john'>
+  <head>
+    <meta charset="utf-8">
+    <title>My HTML File {{i}}</title>
+    <script src="../node_modules/angular/angular.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body>
+    <p>Nothing here {{2+2}}</p>
+    {{ i= 7}}
+
+    <div ng-controller="math">
+      {{ myFirstVar }}
+    </div>
+
+    <div ng-controller="bryce">
+      {{ myFirstVar }}
+      <ul>
+      <li ng-repeat='(key, value) in myArr'>
+       {{key}} - {{value}}
+      </li>
+    </ul>
+    </div>
+   
+  </body>
+</html>
