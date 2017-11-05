@@ -31,15 +31,21 @@
             {{key}} - {{value}}
             </li>
         </ul>
-        <div  class="book-row" ng-repeat="(k,v) in bookArray" >
+        <div class="book-row" ng-repeat="(k,v) in bookArray" >
             <div class="book-text-container">
                 {{v.name}}
                 <br>
-                {{v.book}}
+                {{v.isbn}}
+                <button ng-click="addItem(v.name, $event)">
+                  add {{v.name}} to cart
+                </button>
             </div>
             <img ng-src="{{v.image}}" width="100px" height="100px">
         </div> 
     </div>
-    <p>just html no js</p>     
+    <hr>
+    <div  ng-controller="showCart">
+        <button ng-click="getCart()">show cart</button>
+    </div>    
   </body>
 </html>

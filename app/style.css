@@ -16,3 +16,5 @@ img {
     flex-direction: column;
     justify-content: center;
 }
+
+.disabled { background-color: cyan}
