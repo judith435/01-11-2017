@@ -5,9 +5,7 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    // "start" : "http-server ./ -p8000"   possible
-    "start" : "http-server ./01-11-2017 -p8000" //possible
-//http://localhost:8000/app/
+    "start" : "http-server ./ -p8000"
   },
   "repository": {
     "type": "git",
