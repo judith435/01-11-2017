@@ -1,0 +1,31 @@
+ <div ng-controller="booksCtrl">
+      <div>
+        <input ng-model='search'>
+      </div>
+    <div ng-repeat="value in books | filter:search | capitalize | bestseller:123 ">
+      <h2>{{value.name}}</h2>
+      isbn:
+      <span>{{value.isbn}}</span>
+      <img width={{value.img.width}} ng-src={{value.img.src}} />
+      <br>
+      <button ng-click="addItem(value.isbn)">
+        Add {{ value.isbn }} to cart
+      </button>
+    </div>
+  </div>
+<hr>
+  <div ng-controller="showCartCtrl">
+    {{ items }}
+    <button ng-click="getCart()">Show cart</button>
+  </div>
+
+  <div ng-controller="buyCtrl">
+      <p>Full name: {{user.firstname}} {{user.lastname}}</p>
+      <p>
+        Ships to: {{ user.address }}
+      </p>
+      <input placeholder="firstname" ng-model="user.firstname">
+      <input placeholder="lastname" ng-model="user.lastname">
+       <input placeholder="addess" ng-model="user.address">
+      <button ng-click="order()">Place order!</button>
+  </div>
