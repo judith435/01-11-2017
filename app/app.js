@@ -1,4 +1,19 @@
-var john = angular.module('john', []);
+var john = angular.module('john', ['ngRoute']);
+
+john.config(function($routeProvider) {
+    $routeProvider
+    .when("/", {
+        templateUrl : "books.html"
+    }) 
+    .when('/order', {
+        templateUrl: 'order.html'
+    })
+    .when('/contact', {
+        templateUrl: 'contact.html'
+    })
+});
+
+
 
 john.controller('math', function Math($scope) {
   $scope.myFirstVar = 'Judith Ilson';
@@ -46,4 +61,24 @@ john.controller('showCart', function Book($scope, cartService) {
         alert(JSON.stringify(cartService.booksInCart));
     }  
 
+});
+
+// john.controller('showCartCtrl', function showCartCtrl($scope, cartService) {
+//     $scope.getCart = function() {
+//         $scope.items = cartService.getItemsInCart();
+//     }
+// });
+
+
+// john.controller('buyCtrl', function showCartCtrl($scope, cartService, orderService) {
+john.controller('buyCtrl', function showCartCtrl($scope, cartService) {
+        $scope.user = {
+        firstname: 'judy',
+        lastname: 'ilson',
+        address: 'har not'
+    }
+
+    $scope.order = function() {
+       // orderService.placeOrder($scope.user, cartService.getItemsInCart())
+    }
 });

@@ -4,12 +4,13 @@
     <meta charset="utf-8">
     <title>judy File {{i}}</title>
     <script src="../node_modules/angular/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
     <script src="app.js"></script>
     <script src="filter.js"></script>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <p style="border: solid 2px blue ">Nothing here {{2+2}}</p>
+    <!-- <p style="border: solid 2px blue ">Nothing here {{2+2}}</p>
     {{ i= 7}}
     <br>
     <div ng-controller="math"  style="border: solid 2px red ">
@@ -17,15 +18,15 @@
     </div>
     <br>
     <div ng-controller="bryce" style="border: solid 2px green ">
-      {{ myFirstVar }}
-      <ul>
-      <li ng-repeat='(key, value) in myArr'>
-       {{key}} - {{value}}
-      </li>
-    </ul>
+        {{ myFirstVar }}
+        <ul>
+        <li ng-repeat='(key, value) in myArr'>
+        {{key}} - {{value}}
+        </li>
+      </ul>
     </div>
-    <br>
-    <div ng-controller="book" style="border: solid 2px purple ">
+    <br> -->
+    <!-- <div ng-controller="book" style="border: solid 2px purple ">
         {{ myHusband }}
         <div>search parms<input ng-model="mySearch"></div>
         <div>best seller<input ng-model="bestSeller"></div>
@@ -52,6 +53,14 @@
     <hr>
     <div  ng-controller="showCart">
         <button ng-click="getCart()">show cart</button>
-    </div>    
+    </div>    -->
+      <header>
+        <nav>
+          <a href='#!'>home</a>
+          <a href='#!order'>order</a>
+          <a href='#!contact'>contact</a>
+        </nav>
+      </header>
+      <div ng-view></div>
   </body>
 </html>

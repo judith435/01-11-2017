@@ -1,0 +1,28 @@
+<div ng-controller="book" style="border: solid 2px purple ">
+        {{ myHusband }}
+        <div>search parms<input ng-model="mySearch"></div>
+        <div>best seller<input ng-model="bestSeller"></div>
+        <!-- <ul>
+            <li ng-repeat='(key, value) in bookArray '>
+            {{key}} - {{value}}
+            </li>
+            <li ng-repeat='value in bookArray | capitalize | bestseller:bestSeller'>
+              {{value}}
+              </li>
+          </ul> -->
+        <div class="book-row" ng-repeat="(k,v) in bookArray | filter:mySearch " >
+            <div class="book-text-container">
+                {{v.name}}
+                <br>
+                {{v.isbn}}
+                <button ng-click="addItem(v.name, $event)">
+                  add {{v.name}} to cart
+                </button>
+            </div>
+            <img ng-src="{{v.image}}" width="100px" height="100px">
+        </div> 
+    </div>
+    <hr>
+    <div  ng-controller="showCart">
+        <button ng-click="getCart()">show cart</button>
+    </div>   
