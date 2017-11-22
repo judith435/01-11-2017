@@ -1,3 +1,5 @@
+// http://localhost:8000/app/#!/
+
 var john = angular.module('john', ['ngRoute']);
 
 john.config(function($routeProvider) {
