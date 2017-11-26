@@ -5,15 +5,40 @@
     <title>judy attempt {{i}}</title>
     <script src="../node_modules/angular/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
-    <script src="judy.js"></script>
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <script src="app.js"></script>
+    <script src="controllers.js"></script>
+    <script src="service.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
+
   </head>
-  <body>
-    <p style="border: solid 2px blue ">Nothing here {{2+2}}</p>
-    {{i = "guni"}}
-    <br>
-    <div ng-controller="calci"  style="border: solid 2px red ">
-        {{ myName }}
-    </div>
-  </body>
+    <body>
+      <p style="border: solid 2px yellow">Nothing here {{2+2}}</p>
+      {{i = "guni"}}
+      
+      <br>
+
+      <div ng-controller="calci"  style="border: solid 2px cyan ">
+          {{ myName }}
+      </div>
+
+      <div ng-controller="showMailList"  style="border: solid 2px navy ">
+          <button ng-click="show_mail_list()">Show Mail List</button>
+      </div>
+
+      <div  ng-controller="students"  style="border: solid 2px brown ">
+        <div class="student-row" ng-repeat="stdnt in records">
+          <div class="student-text-container">
+            {{stdnt.name}}
+            <br>
+            {{stdnt.id}}
+            <button ng-click="addStudent(stdnt.name, $event)"> 
+              add {{stdnt.name}} to mail list
+            </button>
+          </div>
+          <img ng-src="{{stdnt.image}}" width="100px" height="100px">
+        </div>  
+      </div>
+
+    </body>
 </html>

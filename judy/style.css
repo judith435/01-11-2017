@@ -1,0 +1,20 @@
+
+img {
+    margin-left: 10px; /*0px 10px; */
+    width: 100px;
+  }
+  
+.student-row {
+    display: flex;
+    flex-direction: row;
+    height: 120px;
+    padding: 10px 0;
+}
+
+.student-text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.disabled { background-color: cyan}
