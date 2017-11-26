@@ -7,7 +7,7 @@ weatherMap.service('weatherService', function($http) {
             url : "http://api.openweathermap.org/data/2.5/weather",
             params: {
                         q: city,
-                        appid: '51fd2319b7ea415b30d60b563e78e71f'
+                        appid: ''
             }
         }).then(success, error);
         
