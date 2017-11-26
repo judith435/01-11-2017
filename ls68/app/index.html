@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" ng-app='my-app'>
+
+<head>
+  <meta charset="utf-8">
+  <title>My HTML File {{i}}</title>
+  <script src="../node_modules/angular/angular.min.js"></script>
+    <script src="../node_modules/angular-route/angular-route.min.js"></script>
+  <script src="app.js"></script>
+    <script src="services.js"></script>
+    <script src="filters.js"></script>
+    <script src="directives.js"></script>
+    <script>
+  // Initialize the Firebase SDK
+  /*
+  var config = {
+    apiKey: '<your-api-key>',
+    authDomain: '<your-auth-domain>',
+    databaseURL: '<your-database-url>',
+    storageBucket: '<your-storage-bucket>'
+  };
+  */
+  // firebase.initializeApp(config);
+</script>
+</head>
+
+  <body>
+    <header>
+      <nav>
+        <a href='#!'>Link 1</a>
+        <a href='#!order'>Link 1</a>
+        <a href=#>Link 1</a>
+      </nav>
+    </header>
+  <div ng-view></div>
+  <input id=a1>
+
+</body>
+
+</html>

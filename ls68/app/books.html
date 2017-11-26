@@ -1,0 +1,25 @@
+ <div ng-controller="booksCtrl">
+   array: {{myWelcome}}
+      <div>
+        <input ng-model='search'>
+      </div>
+      <div leave-details slogen='now'></div>
+    <div ng-repeat="value in books | filter:search | capitalize | bestseller:123 ">
+      <h2>{{value.name}}</h2>
+      isbn:
+      <span>{{value.isbn}}</span>
+      <img width={{value.img.width}} ng-src={{value.img.src}} />
+      <br>
+      <button ng-click="addItem(value.isbn)">
+        Add {{ value.isbn }} to cart
+      </button>
+    </div>
+  </div>
+  <div leave-details slogen='well call you back'></div>
+<hr>
+  <div ng-controller="showCartCtrl">
+    {{ items }}
+    <button ng-click="getCart()">Show cart</button>
+  </div>
+  <leave-details slogen='third time'></leave-details>
+  

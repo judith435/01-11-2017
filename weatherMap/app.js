@@ -1,1 +1,1 @@
-var weatherMap = angular.module('weather_map', []);//'judy' must be same name as  ng-app='judy'
+var weatherMap = angular.module('weather_map', ['ngRoute']);//'judy' must be same name as  ng-app='judy'
