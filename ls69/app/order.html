@@ -1,0 +1,13 @@
+
+  <div ng-controller="buyCtrl">
+        <p>Full name: {{user.firstname}} {{user.lastname}}</p>
+        <p>
+          Ships to: {{ user.address }}
+        </p>
+
+        <input placeholder="firstname" ng-model="user.firstname">
+        <input placeholder="lastname" ng-model="user.lastname">
+        <input placeholder="addess" ng-model="user.address">
+        <button ng-click="order()">Place order!</button>
+        <p leave-details></p>
+    </div>
