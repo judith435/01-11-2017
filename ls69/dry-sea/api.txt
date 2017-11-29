@@ -1,0 +1,7 @@
+https://api.onwater.io/api/v1/results/[latitude],[longitude]
+
+'4zeVt4uqSazyxgGoR-ss'
+ params: {
+                access_token: '4zeVt4uqSazyxgGoR-ss'
+     
+            }

@@ -1,0 +1,9 @@
+.water {    background-color:aqua; }
+
+.land {    background-color:burlywood; }
+
+.box {
+    width:100px; 
+    height:100px;
+    display:inline-block;
+}

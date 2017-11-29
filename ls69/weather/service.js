@@ -1,5 +1,5 @@
 weatherApp.service('weatherService', function($http) {
-    const apiKey = '';
+    const apiKey = 'e06a2f3d21ca934dc5a82ff8ba8ec0d8';
 
     this.getDataByCityName = function(cityName, onSuccess, onError ) {
         $http({

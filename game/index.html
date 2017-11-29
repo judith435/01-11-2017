@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" ng-app='game_app'>
+  <head>
+    <meta charset="utf-8">
+    <title>coordinates game</title>
+    <script src="../node_modules/angular/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+    <script src="app.js"></script>
+    <script src="controllers.js"></script>
+    <script src="service.js"></script>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+
+  </head>
+    <body>
+      <div ng-controller="gamePanel" >
+            <div>
+                <span>X:</span>
+                <input ng-model="xCoordinate">
+                <span>Y:</span>
+                <input ng-model="yCoordinate">
+                <button class="btn btn-primary" ng-click="getLocation()">get location</button>
+                <button class="btn btn-primary" ng-click="randomLocation()">get random location</button>
+            </div>
+            <div ng-model="waterFound" ng-show="waterFound" class="box water">water</div>
+            <div ng-model="landFound" ng-show="landFound" class="box land">land</div>
+            <div>
+                <span>water counter : {{waterCounter}}</span>
+                <span>land counter : {{landCounter}}</span>
+            </div>
+      </div>
+    </body>
+</html>
+
+<!-- https://eloquentjavascript.net/10_modules.html -->
+<!-- https://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript -->
