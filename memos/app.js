@@ -1,0 +1,1 @@
+var memoApp = angular.module('memo_app',  ["ngSanitize"]);

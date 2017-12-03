@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app='memo_app'>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Memo Board</title>
+        <script src="../node_modules/angular/angular.min.js"></script>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+            <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
+        <!-- site css file placed after bootstrap files to enable overriding of bootstrap styles --> 
+        <link rel="stylesheet" href="style.css"/> 
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>    
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" 
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular-sanitize.min.js"></script>        <script src="app.js"></script>
+        <script src="controllers.js"></script>
+        <script src="sevice.js"></script>
+        <script src="directives.js"></script>
+    </head>
+    <!-- <body onload="pageInit()"> -->
+    <body>
+        <main class="container-fluid img-responsive" ng-controller="createMemo" >
+            <div class="form-inline">
+            <div class="form-group">
+                <label for="memoDate">Date:</label>
+                <input type="date" class="form-control" id="memoDate"  ng-model="memoDate" required>
+            </div>
+            <div class="form-group">
+                <label for="memoTime">Time:</label>
+                <input type="time" class="form-control" id="memoTime"  ng-model="memoTime">
+            </div>
+            <div class="form-group position-left">
+                <input type="button" ng-click="addMemo()" class="btn btn-default" value="Save" /> 
+                <input type="button" ng-click="getMemos()" class="btn btn-default" value="memi" /> 
+            </div>
+            </div>
+            <div id="errorMessages" class="alert alert-danger position-left">
+            <strong>Error!</strong>
+            </div>
+            <div class="form-group">
+            <label for="memoContent">Memo</label>
+            <textarea class="form-control" rows="5" id="memoContent" ng-model="memoContent" placeholder="Enter your memo... (maximum 70 characters)" maxlength="70" required></textarea>
+            </div>
+            <div style="border:solid 2px blue" class="container-fluid" id="memos" ng-repeat="memo in memos" >
+                {{memo.content}}
+            </div>
+        </main>
+        <!-- <div class="container-fluid" id="memos" ng-repeat="memo in memos" > -->
+    </body>
+</html>

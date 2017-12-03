@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" ng-app="note-name">
+
+<head>
+    <meta charset="utf-8">
+    <title>Matanel</title>
+    <link rel="stylesheet" href='../node_modules/bootstrap/dist/css/bootstrap.min.css'>
+    <link rel="stylesheet" href='index.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../node_modules/angular/angular.min.js"></script>
+    <script src="../node_modules/angular-route/angular-route.min.js"></script>
+    <script src="app.js"></script>
+    <script src="controller.js"></script>
+    <script src="service.js"></script>
+    <script src='filter.js'></script>
+    <script src="config.js"></script>
+</head>
+
+<body>
+    <center>
+        <div>
+            <img src="imags/title.png">
+        </div>
+    </center>
+    <div ng-controller="addNoteCtrl">
+        <form>
+            <div class="Button" align="center">
+                <textarea ng-model="task.taskText" id="texta" class="form-control" placeholder="enter text" style="height: 196px;" required>
+                </textarea>
+                <br>
+                <input ng-model='task.taskDate' type="date" class="fa fa-calendar btn btn-info btn-lg btn" required>
+                <button ng-click="insert()" type="button" class="fa fa-reply btn btn-success btn-lg btn"> Send</button>
+                <button type="button" class="fa fa-trash btn btn-danger btn-lg btn"> Del</button>
+                <button type="Reset" class="fa fa-refresh btn btn-primary btn-lg btn"> Reset</button>
+            </div>
+        </form>
+    </div>
+    <hr>
+    <div ng-controller="notesCtrl">
+
+        <div ng-repeat="note in notes">
+            <div class="stick">
+                {{note.taskText}} 
+                <span ng-if='note.taskDate'>
+                        - 
+                {{note.taskDate | date : 'dd/MM/yyyy'}}
+            </span>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

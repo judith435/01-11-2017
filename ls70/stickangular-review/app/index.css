@@ -1,0 +1,20 @@
+.form-control{
+    width: 45%;
+}
+body{
+    background-image: url("imags/tile.jpg");
+}
+
+#texta {
+    background-image: url("imags/formbg.jpg");
+    font-size: 25px;
+    margin: 5px;
+}
+
+.stick {
+    width: 90px;
+    min-height: 50px;
+    float: left;
+    margin: 0 0 5px 5px;
+    background-color: yellow;
+}
