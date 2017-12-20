@@ -18,7 +18,8 @@ notesApp.controller('ctrlAddNote', function notesCtrl($scope, noteService) {
         note = {
             date: $scope.memo_date,
             time: $scope.memo_time,
-            content: $scope.memo_content
+            content: $scope.memo_content,
+            new: true
         };
         noteService.saveNote(note);
         $scope.memo_date = new Date();  

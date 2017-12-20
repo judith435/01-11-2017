@@ -2,15 +2,18 @@ notesApp.service('noteService', function($rootScope) {
 
     const storageNotesKey = 'memos';
     
-        this.saveNote = function(memo) {
+        this.saveNote = function(newNote) {
             var notesArray = this.getNotes();
-            notesArray.push(memo);
+            notesArray.push(newNote);
             localStorage.setItem(storageNotesKey, JSON.stringify(notesArray));
             $rootScope.$broadcast('notes-changed');
         }
     
         this.getNotes = function() {
             var notesArray = JSON.parse(localStorage.getItem(storageNotesKey)) || [];
+            notesArray.forEach(function(note) { 
+                note.new = false 
+            });
             return notesArray;
         }
 

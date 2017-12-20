@@ -50,7 +50,8 @@
         </main>
         <div  class="container-fluid" ng-controller="ctrlNotes">
             <div ng-repeat="note in notes">
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 memo-background fade-in">
+                <div ng-class='{"col-xs-12 col-sm-6 col-md-4 col-lg-3 memo-background fade-in": note.new, 
+                                "col-xs-12 col-sm-6 col-md-4 col-lg-3 memo-background": !note.new}'>
                     <button class="btn btn-link"  type="button" 
                         ng-click="deleteNote($index)">   
                         <span class="glyphicon glyphicon-trash deleteButton"></span>
@@ -66,7 +67,10 @@
     </body>
 </html>
 
-<!-- <div ng-app="example" ng-controller="ctrl">
+<!-- 
+     ng-class="{'checkedClass': team.isChecked, 'uncheckedClass': !team.isChecked}">
+    
+    <div ng-app="example" ng-controller="ctrl">
     <div ng-repeat-start="item in items" ng-if="$first" big>
       big item {{item}}
     </div>
