@@ -1,8 +1,8 @@
 notesApp.controller('ctrlNotes', function notesCtrl($scope, noteService) {
-    $scope.notes = noteService.getNotes();
+    $scope.notes = noteService.getNotes(true);
 
-    $scope.$on('notes-changed', function() {
-        $scope.notes = noteService.getNotes();
+    $scope.$on('notes-changed', function(event, noFadeIn) {
+        $scope.notes = noteService.getNotes(noFadeIn);
     });
 
     $scope.deleteNote = function(id)  {

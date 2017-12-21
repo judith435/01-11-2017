@@ -48,10 +48,11 @@
               maxlength="70" required></textarea>
             </div>
         </main>
+
         <div  class="container-fluid" ng-controller="ctrlNotes">
             <div ng-repeat="note in notes">
-                <div ng-class='{"col-xs-12 col-sm-6 col-md-4 col-lg-3 memo-background fade-in": note.new, 
-                                "col-xs-12 col-sm-6 col-md-4 col-lg-3 memo-background": !note.new}'>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 memo-background"
+                     ng-class="{'fade-in': note.new, '': !note.new}"> 
                     <button class="btn btn-link"  type="button" 
                         ng-click="deleteNote($index)">   
                         <span class="glyphicon glyphicon-trash deleteButton"></span>
