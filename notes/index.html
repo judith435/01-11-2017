@@ -24,31 +24,35 @@
     </head>
     <body>
         <header></header>
-        <main class="container-fluid img-responsive" ng-controller="ctrlAddNote">
-            <div class="form-inline">
-                <div class="form-group">
-                    <label for="memoDate">Date:</label>
-                    <input type="date" class="form-control" id="memoDate" name="memoDate" ng-model="memo_date" required>
-                </div>
-                <div class="form-group">
-                    <label for="memoTime">Time:</label>
-                    <input type="time" class="form-control" id="memoTime"  ng-model="memo_time" >
-                </div>
-                <div class="form-group position-left">
-                    <button type="button" ng-click="addNote()"  class="btn btn-default"/>Save</button> 
-                </div>
-                </div>
-                <div id="errorMessages" class="alert alert-danger position-left">
-                    <strong>Error!</strong>
-                </div>
-                <div class="form-group">
-                    <label for="memoContent">Memo</label>
-                    <textarea class="form-control" rows="5" id="memoContent" ng-model="memo_content"
-                        placeholder="Enter your memo... (maximum 70 characters)"  name="memoContent" 
-                            maxlength="70" required>
-                    </textarea>
-                </div>
-        </main>
+        <form name="formNewNote">
+            <main class="container-fluid img-responsive" ng-controller="ctrlAddNote">
+                <div class="form-inline">
+                    <div class="form-group">
+                        <label for="memoDate">Date:</label>
+                        <input type="date" class="form-control" id="memoDate" name="memoDate" ng-model="memo_date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="memoTime">Time:</label>
+                        <input type="time" class="form-control" id="memoTime"  ng-model="memo_time" >
+                    </div>
+                    <div class="form-group position-left">
+                        <button type="button" ng-click="addNote()"  class="btn btn-default"/>Save</button> 
+                    </div>
+                    </div>
+                    <div id="errorMessages" class="alert alert-danger position-left">
+                        <strong>Error!</strong>
+                        <span style="color:red" ng-show="formNewNote.memoContent.$dirty && myForm.memoContent.$invalid">
+                        <span ng-show="formNewNote.memoContent.$error.required">Username is required.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="memoContent">Memo</label>
+                        <textarea class="form-control" rows="5" id="memoContent" ng-model="memo_content"
+                            placeholder="Enter your memo... (maximum 70 characters)"  name="memoContent" 
+                                maxlength="70" required>
+                        </textarea>
+                    </div>
+            </main>
+        </form>
         <div  class="container-fluid" ng-controller="ctrlNotes">
             <div ng-repeat="note in notes">
                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 memo-background"

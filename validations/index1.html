@@ -24,9 +24,9 @@ name="myForm" novalidate>
 </p>
 
 <p>
-    <input type="submit"
-        ng-disabled="myForm.user.$dirty && myForm.user.$invalid ||  
-          myForm.email.$dirty && myForm.email.$invalid">
+    <input type="submit" ng-click="submiti()">
+        <!-- ng-disabled="myForm.user.$dirty && myForm.user.$invalid ||  
+          myForm.email.$dirty && myForm.email.$invalid"> -->
 </p>
 
 </form>
@@ -36,6 +36,13 @@ var app = angular.module('myApp', []);
 app.controller('validateCtrl', function($scope) {
     $scope.user = 'John Doe';
     $scope.email = 'john.doe@gmail.com';
+    $scope.submiti = function()  {
+        if ($scope.myForm.$invalid) {
+            alert("falsi!!");
+            return false;
+        }
+        alert("submiti!!");
+    }  
 });
 </script>
 
