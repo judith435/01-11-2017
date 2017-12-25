@@ -1,4 +1,5 @@
 notesApp.controller('ctrlNotes', function notesCtrl($scope, noteService) {
+    $scope.showErrorMessages = false;
     $scope.notes = noteService.getNotes(true);
 
     $scope.$on('notes-changed', function(event, noFadeIn) {
@@ -15,9 +16,12 @@ notesApp.controller('ctrlAddNote', function notesCtrl($scope, noteService) {
     $scope.memo_time = new Date();
     
     $scope.addNote = function()  {
+
         if ($scope.formNewNote.$invalid){
-            return;
+             $scope.showErrorMessages = true;
+             return;
         }
+
         note = {
             date: $scope.memo_date,
             time: $scope.memo_time,
@@ -28,6 +32,7 @@ notesApp.controller('ctrlAddNote', function notesCtrl($scope, noteService) {
         $scope.memo_date = new Date();  
         $scope.memo_time = new Date();
         $scope.memo_content = "";
+        $scope.showErrorMessages = false;
     }  
 });
 
