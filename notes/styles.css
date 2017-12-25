@@ -23,7 +23,7 @@ textarea { resize: none; }
 *[required] {
   background-color:  lightgoldenrodyellow;
 }
-#errorMessages { display:none; }
+/* #errorMessages { display:none; } */
 .memo-background { 
     background: url('images/notebg.png') no-repeat; 
     height:250px; 

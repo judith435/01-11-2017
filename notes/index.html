@@ -39,15 +39,17 @@
                         <button type="button" ng-click="addNote()"  class="btn btn-default"/>Save</button> 
                     </div>
                     </div>
-                    <div id="errorMessages" class="alert alert-danger position-left">
-                        <strong>Error!</strong>
-                        <span style="color:red" ng-show="formNewNote.memoContent.$dirty && myForm.memoContent.$invalid">
-                        <span ng-show="formNewNote.memoContent.$error.required">Username is required.</span>
+                    <!-- <div id="errorMessages" class="alert alert-danger position-left"> -->
+                            <!-- ($scope.formNewNote.$invalid -->
+                    <div  class="position-left">
+                        <span style="color:red" ng-show="formNewNote.memo_content.!$pristine && formNewNote.memo_content.$invalid">
+                             <span ng-show="formNewNote.memo_content.$error.required">Memo Content is required.</span>
+                        </span>
                     </div>
                     <div class="form-group">
-                        <label for="memoContent">Memo</label>
-                        <textarea class="form-control" rows="5" id="memoContent" ng-model="memo_content"
-                            placeholder="Enter your memo... (maximum 70 characters)"  name="memoContent" 
+                        <label for="memo_content">Memo</label>
+                        <textarea class="form-control" rows="5" id="memo_content" ng-model="memo_content"
+                            placeholder="Enter your memo... (maximum 70 characters)"  name="memo_content" 
                                 maxlength="70" required>
                         </textarea>
                     </div>

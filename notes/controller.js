@@ -16,7 +16,6 @@ notesApp.controller('ctrlAddNote', function notesCtrl($scope, noteService) {
     
     $scope.addNote = function()  {
         if ($scope.formNewNote.$invalid){
-            alert("errori");
             return;
         }
         note = {
